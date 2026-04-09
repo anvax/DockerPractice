@@ -1,0 +1,99 @@
+{
+  "title": "MQTT Sensors Dashboard",
+  "panels": [
+    {
+      "title": "Temperature Sensors (All)",
+      "type": "graph",
+      "targets": [
+        {
+          "measurement": "mqtt_consumer",
+          "select": [
+            [
+              {
+                "type": "field",
+                "params": ["value"]
+              },
+              {
+                "type": "mean",
+                "params": []
+              }
+            ]
+          ],
+          "groupBy": [
+            {
+              "type": "time",
+              "params": ["$__interval"]
+            },
+            {
+              "type": "tag",
+              "params": ["topic"]
+            }
+          ],
+          "where": [
+            {
+              "type": "regex",
+              "params": ["topic", "/sensors/temperature.*"]
+            }
+          ]
+        }
+      ],
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0}
+    },
+    {
+      "title": "All Sensors - Average Values",
+      "type": "graph",
+      "targets": [
+        {
+          "measurement": "mqtt_consumer",
+          "select": [
+            [
+              {
+                "type": "field",
+                "params": ["value"]
+              },
+              {
+                "type": "mean",
+                "params": []
+              }
+            ]
+          ],
+          "groupBy": [
+            {
+              "type": "time",
+              "params": ["$__interval"]
+            }
+          ]
+        }
+      ],
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0}
+    },
+    {
+      "title": "Latest Values - All Sensors",
+      "type": "table",
+      "targets": [
+        {
+          "measurement": "mqtt_consumer",
+          "select": [
+            [
+              {
+                "type": "field",
+                "params": ["value"]
+              },
+              {
+                "type": "last",
+                "params": []
+              }
+            ]
+          ],
+          "groupBy": [
+            {
+              "type": "tag",
+              "params": ["topic"]
+            }
+          ]
+        }
+      ],
+      "gridPos": {"h": 8, "w": 24, "x": 0, "y": 8}
+    }
+  ]
+}
