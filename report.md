@@ -29,7 +29,7 @@ sudo docker-compose up -d
 sudo docker-compose ps
 ```
 
-![1](assets/image/1.png)
+![1](assets/images/1.png)
 
 
 # Linux B
@@ -43,7 +43,7 @@ sudo docker-compose ps
 ```
 docker exec -it mosquitto-broker mosquitto_sub -h localhost -t "#" -v
 ```
-![2](assets/image/2.png)
+![2](assets/images/2.png)
 # Linux C
 
 Запустите виртуальную машину и перейдите в рабочую директорию:
@@ -75,14 +75,14 @@ show users
 
 exit
 ```
-![3](assets/image/3.png)
+![3](assets/images/3.png)
 
 Можно просмотреть данные с помощью следующей команды:
 ```
 docker exec influxdb influx -database sensors -execute "SELECT * FROM mqtt_consumer ORDER BY time DESC LIMIT 15"
 ```
 
-![4](assets/image/4.png)
+![4](assets/images/4.png)
 
 
 # Проверка работы
@@ -94,6 +94,6 @@ docker exec influxdb influx -database sensors -execute "SELECT * FROM mqtt_consu
 5. Перейдите в  раздел Dashboards:
 6. Откройте его:
 7. Перейдите в дашборд "MQTT Sensors Dashboard": 
-![5](assets/image/5.png)
+![5](assets/images/5.png)
 8. Готовый результат:
-![6](assets/image/6.png)
+![6](assets/images/6.png)
