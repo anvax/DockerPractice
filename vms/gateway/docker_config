@@ -1,0 +1,7 @@
+docker run -d \
+  --name mosquitto-broker \
+  -p 1883:1883 \
+  -v $(pwd)/mosquitto.conf:/mosquitto/config/mosquitto.conf \
+  -v mosquitto-data:/mosquitto/data \
+  -v mosquitto-log:/mosquitto/log \
+  eclipse-mosquitto
