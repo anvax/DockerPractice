@@ -97,3 +97,4 @@ docker exec influxdb influx -database sensors -execute "SELECT * FROM mqtt_consu
 ![5](assets/images/5.png)
 8. Готовый результат:
 ![6](assets/images/6.png)
+![7](assets/images/7.png)
