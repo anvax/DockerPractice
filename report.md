@@ -18,7 +18,7 @@
 
 После этого запустите виртуальную машину и перейдите в рабочую директорию:
 ```
-cd sensor-simulator
+cd /репозиторий/vms/client/simulator
 ```
 Запустите контейнеры:
 ```
@@ -48,7 +48,7 @@ docker exec -it mosquitto-broker mosquitto_sub -h localhost -t "#" -v
 
 Запустите виртуальную машину и перейдите в рабочую директорию:
 ```
-cd monitoring-stack
+cd /репозиторий/vms/server
 ```
 
 Запустите контейнер:
